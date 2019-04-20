@@ -5,7 +5,7 @@
    "Principal": {
        "AWS": [
          "arn:aws:iam::XXXXXXXX:user/FOO",
-	 ]
+   ]
    },
    "Action": "s3:*",
    "Resource": "arn:aws:s3:::MY-BUCKET-NAME"
