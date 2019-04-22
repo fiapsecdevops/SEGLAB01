@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "terraform.fiap.site"
-    key    = "infrastructure/aws/48720"
+    key    = "infrastructure/aws/XXXXX"
     region = "us-east-1"
   }
 }
