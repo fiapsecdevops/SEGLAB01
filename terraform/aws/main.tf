@@ -12,7 +12,7 @@ resource "aws_vpc" "webserver" {
   tags {
     name          = "${var.name}"
     turma         = "${var.turma}"
-    RM            = "${var.RM}"
+    Group         = "${var.Group}"
   }
 } 
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "subnet-webserver" {
   tags {
     name          = "${var.name}"
     turma         = "${var.turma}"
-    RM            = "${var.RM}"
+    Group         = "${var.Group}"
   }
 }
 
@@ -36,7 +36,7 @@ resource "aws_internet_gateway" "igw-webserver" {
   tags {
     name          = "${var.name}"
     turma         = "${var.turma}"
-    RM            = "${var.RM}"
+    Group         = "${var.Group}"
   }
 }
 
@@ -47,13 +47,13 @@ resource "aws_eip" "eip-webserver" {
   tags {
     name          = "${var.name}"
     turma         = "${var.turma}"
-    RM            = "${var.RM}"
+    Group         = "${var.Group}"
     }  
 }
 
 resource "aws_route53_record" "record-webserver" {
   zone_id = "${var.zone_id}"
-  name    = "${var.RM}.${var.zone_name}"
+  name    = "${var.Group}.${var.zone_name}"
   type    = "A"
   ttl     = "60"
   records = ["${aws_eip.eip-webserver.public_ip}"]
@@ -65,7 +65,7 @@ resource "aws_default_route_table" "webserver" {
   tags {
     name          = "${var.name}"
     turma         = "${var.turma}"
-    RM            = "${var.RM}"
+    Group         = "${var.Group}"
     }
 
 route {
@@ -82,7 +82,7 @@ resource "aws_security_group" "webserver" {
   tags {
     name          = "${var.name}"
     turma         = "${var.turma}"
-    RM            = "${var.RM}"
+    Group         = "${var.Group}"
   }
 
   ingress {
@@ -126,7 +126,7 @@ resource "aws_instance" "webserver" {
   tags {
     Name          = "${var.name}"
     turma         = "${var.turma}"
-    RM            = "${var.RM}"
+    Group         = "${var.Group}"
   }
 }
 

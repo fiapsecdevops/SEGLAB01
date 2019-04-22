@@ -32,7 +32,7 @@ variable "turma" {
   default = "43SEG"
 }
 
-variable "RM" {
+variable "Group" {
   type    = "string"
 }
 
