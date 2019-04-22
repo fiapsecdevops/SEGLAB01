@@ -35,8 +35,3 @@ variable "vpc_id" {
   type	    = "string"
   default   = "vpc-97d996f3"
 }
-
-variable "sg_id" {
-  type	    = "string"
-  default   = "sg-06c3a9ab99c12d085"
-}
