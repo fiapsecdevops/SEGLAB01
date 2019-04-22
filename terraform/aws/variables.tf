@@ -16,11 +16,6 @@ variable "type" {
   default   = "t2.small"
 }
 
-variable "cidr" {
-  description = "Network CIDR, Formato: 192.168.XX.0/24 (Onde XX sera o num. de sua maq. por exemplo 192.168.5.0/24 ou 192.168.12.0/24)"
-  type        = "string"
-}
-
 variable "ami" {
   description = "CoreOS AMI"
   type        = "string"
@@ -36,12 +31,12 @@ variable "RM" {
   type    = "string"
 }
 
-variable "zone_id" {
-  type      = "string"
-  default   = "Z35E0MU3IBLUWF"
+variable "vpc_id" {
+  type	    = "string"
+  default   = "vpc-97d996f3"
 }
 
-variable "zone_name" {
-  type      = "string"
-  default   = "fiapdev.com"
+variable "sg_id" {
+  type	    = "string"
+  default   = "sg-06c3a9ab99c12d085"
 }
