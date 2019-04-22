@@ -10,10 +10,6 @@ data "aws_vpc" "selected" {
   id = "${var.vpc_id}"
 }
 
-data "aws_security_group" "selected" {
-  id = "${var.sg_id}"
-}
-
 resource "aws_instance" "webserver" {
   ami                         = "${var.ami}"
   instance_type               = "${var.type}"
